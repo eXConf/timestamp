@@ -1,6 +1,8 @@
 var express = require('express')
 var strftime = require('strftime')
 var app = express()
+var port = process.env.PORT || 8080
+
 
 app.get('/', function (req, res) {
   res.sendFile('index.html', {root: __dirname}, function(err) {
@@ -36,6 +38,6 @@ app.get('/:query', function (req, res) {
   res.send(JSON.stringify(output))
 })
 
-app.listen(3000, function () {
+app.listen(port, function () {
 
 })
